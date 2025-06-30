@@ -33,7 +33,7 @@ jobs:
     - name: Deploy to Hostinger FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        ftp-server: ${{ secrets.FTP_SERVER }}  # Use GitHub Secrets for FTP credentials
-        ftp-username: ${{ secrets.FTP_USERNAME }}  # Use GitHub Secrets for FTP username
-        ftp-password: ${{ secrets.FTP_PASSWORD }}  # Use GitHub Secrets for FTP password
+        server: ${{ secrets.FTP_SERVER }}  # Use GitHub Secrets for FTP credentials
+        username: ${{ secrets.FTP_USERNAME }}  # Use GitHub Secrets for FTP username
+        password: ${{ secrets.FTP_PASSWORD }}  # Use GitHub Secrets for FTP password
         local-dir: ./dist/  # Path to the build folder (dist is created by Vite)
