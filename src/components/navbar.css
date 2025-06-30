@@ -1,0 +1,30 @@
+/* Sticky Navbar and Scroll Effects */
+.sticky-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Add shadow and blur effect on scroll */
+.sticky-navbar.scrolled {
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown Menu Animation */
+.child {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transform: translateY(-10%);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect to display child */
+.parent:hover .child {
+  opacity: 1;
+  height: auto;
+  transform: translateY(0);
+  overflow: visible;
+}
