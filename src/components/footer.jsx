@@ -1,4 +1,4 @@
-import Logo from "../assets/bartCoin.png";
+import bartLogo from '../assets/bartCoin.PNG';
 import { Footer, FooterBrand, FooterCopyright, FooterDivider, FooterLink, FooterLinkGroup } from "flowbite-react";
 const FooterSection = () => {
     return (
@@ -6,7 +6,7 @@ const FooterSection = () => {
       <div className="w-full text-center">
         <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
           <FooterBrand
-            src={Logo}
+            src={bartLogo}
             alt="bartLogo"
 
           />
