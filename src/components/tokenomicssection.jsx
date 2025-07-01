@@ -4,16 +4,16 @@ import { Card } from "flowbite-react";
 const Tokenomics = ()=>{
     return(
 <section className="relative bg-[#ffe649] bg-cover bg-center sm:bg-top md:bg-center flex items-center p-6">
-  <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 items-center mx-auto montserrat ">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center mx-auto montserrat ">
     
     {/* Title Section */}
-    <div className="col-span-2 text-center mb-2 mt-4">
+    <div className="md:col-span-2 text-center mb-2 mt-4">
       <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl text-black">Tokenomics</h1>
     </div>
 
     {/* Pie Chart Section */}
     <div className="flex justify-center mb-6 md:mb-0">
-      <img className="max-h-[500px] min-h-[200px] object-contain" src={pieChart} alt="Pie chart" />
+      <img className="max-h-[500px]  object-contain" src={pieChart} alt="Pie chart" />
     </div>
 
     {/* List Section */}

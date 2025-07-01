@@ -79,7 +79,7 @@ customElements.define("activities-widget", ActivitiesWidget);
 const AboutSection = () =>{
     return(
         <section className="relative min-h-[800px] bg-cover bg-center sm:bg-top md:bg-center flex items-center m-4">
-  <div className="mx-auto p-6 sm:p-10 flex flex-col sm:flex-row items-center justify-center space-y-8 sm:space-y-0 sm:space-x-8">
+  <div className="mx-auto p-6 p-10 flex flex-col lg:flex-row items-center justify-center space-y-8 sm:space-y-0 sm:space-x-8">
     <div className="max-w-lg text-lg text-gray-800">
 
       {/* CardCarousel */}

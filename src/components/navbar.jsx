@@ -3,19 +3,24 @@ import "./navbar.css";
 
 const NavigationBar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); // State untuk toggle menu
 
-  // Effect for adding shadow and blur when scrolling
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10); // Added logic for scroll detection
+    const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll); // Cleanup the event listener
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const toggleMenu = () => {
+    setMenuOpen(prev => !prev);
+  };
 
   return (
     <nav className={`sticky-navbar ${scrolled ? "scrolled" : ""} flex px-4 border-b md:shadow-lg items-center relative`}>
-      {/* The class `sticky-navbar` ensures the navbar sticks at the top, `scrolled` applies when the user scrolls */}
       <div className="text-lg font-bold px-10 py-4 montserrat">Bart Coin</div>
-      <ul className="md:px-2 ml-auto md:flex md:space-x-2 absolute md:relative top-full left-0 right-0">
+
+      <ul className={`md:px-2 ml-auto md:flex md:space-x-2 absolute md:relative top-full left-0 right-0 bg-white md:bg-transparent z-10 transition-all duration-300
+        ${menuOpen ? "block" : "hidden"} md:block`}>
         <li>
           <a href="#home" className="flex md:inline-flex p-4 items-center hover:bg-gray-50">
             <span>Home</span>
@@ -47,9 +52,9 @@ const NavigationBar = () => {
           </a>
         </li>
       </ul>
-      {/* Hamburger menu on small screens */}
-      <div className="ml-auto md:hidden text-gray-500 cursor-pointer">
-        <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+
+      <div className="ml-auto md:hidden text-black cursor-pointer" onClick={toggleMenu}>
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 fill-current" viewBox="0 0 24 24">
           <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z"/>
         </svg>
       </div>
